@@ -134,10 +134,9 @@ PDF dokümanının LLM'in anlayabileceği parçalara bölünme stratejisi.
 | Parametre | Değer | Açıklama |
 | :--- | :--- | :--- |
 | **Splitter Algoritması** | `RecursiveCharacterTextSplitter` | Metni mantıksal bütünlüğü bozmadan (paragraf, cümle bazlı) böler. |
-| **Chunk Size** | `800 Token` | Her bir parçanın boyutu. Bir iade maddesinin tamamını kapsayacak kadar geniş tutuldu. |
-| **Chunk Overlap** | `80 Token` | **Bağlam Kaybını Önleme:** Bölünen parçalar arasında örtüşme bırakılarak cümlenin kesilmesi engellendi. |
-| **Batch Size** | `100` | Embedding işlemi sırasında hafıza yönetimi için veriler 100'lü paketler halinde işlenir. |
- |
+| **Chunk Size** | `500 Token` | Her bir parçanın boyutu. Bir iade maddesinin tamamını kapsayacak kadar geniş tutuldu. |
+| **Chunk Overlap** | `50 Token` | **Bağlam Kaybını Önleme:** Bölünen parçalar arasında örtüşme bırakılarak cümlenin kesilmesi engellendi. |
+|
 
 ---
 
@@ -145,7 +144,7 @@ PDF dokümanının LLM'in anlayabileceği parçalara bölünme stratejisi.
 
 * **Neden Temperature 0.0?**
     İade politikaları yorum kaldırmaz. "Belki iade alırlar" gibi muğlak cevaplar yerine, dokümanda ne yazıyorsa kesin olarak onu söylemesi için yaratıcılık sıfırlandı.
-* **Neden Gemini 2.0 Flash?**
+* **Neden Gemini 2.5 Flash?**
     Chatbotlarda hız kritiktir. Flash modeli, Pro modeline göre çok daha hızlı yanıt verirken, RAG görevlerinde yeterli zekaya sahiptir.
 
 ---
